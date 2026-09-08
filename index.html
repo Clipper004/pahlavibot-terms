@@ -1,0 +1,3918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050507"
+  >
+
+  <meta
+    name="description"
+    content="PahlaviBot Terms of Service"
+  >
+
+  <title>PahlaviBot · Terms of Service</title>
+
+
+  <!-- ==================================================
+       FONT
+  ================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* ==================================================
+       VARIABLES
+    ================================================== */
+
+    :root {
+      --bg: #050507;
+      --bg-secondary: #09090c;
+
+      --card: rgba(19, 19, 23, 0.72);
+      --card-hover: rgba(29, 29, 35, 0.84);
+
+      --text: #f5f5f7;
+      --text-soft: #c1c1c8;
+      --muted: #96969e;
+      --subtle: #696971;
+
+      --border: rgba(255, 255, 255, 0.085);
+      --border-strong: rgba(255, 255, 255, 0.145);
+
+      --accent: #ffffff;
+      --accent-soft: rgba(255, 255, 255, 0.065);
+
+      --success: #30d158;
+      --danger: #ff5f57;
+      --warning: #ffb840;
+
+      --radius: 28px;
+      --max-width: 1160px;
+    }
+
+
+    /* ==================================================
+       RESET / BASE
+    ================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 115px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 50% -12%,
+          rgba(255,255,255,0.105),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 4% 26%,
+          rgba(88,105,255,0.055),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 96% 68%,
+          rgba(163,81,255,0.045),
+          transparent 26%
+        ),
+        var(--bg);
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        sans-serif;
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background:
+        rgba(255,255,255,0.18);
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* ==================================================
+       AMBIENT BACKGROUND
+    ================================================== */
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+
+      z-index: -10;
+
+      pointer-events: none;
+
+      overflow: hidden;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 75px 75px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 78%
+        );
+    }
+
+    .orb {
+      position: absolute;
+
+      width: 480px;
+      height: 480px;
+
+      border-radius: 50%;
+
+      filter: blur(130px);
+
+      opacity: 0.09;
+
+      animation:
+        floatingOrb
+        16s
+        ease-in-out
+        infinite
+        alternate;
+    }
+
+    .orb.one {
+      top: -260px;
+      left: 23%;
+
+      background: #ffffff;
+    }
+
+    .orb.two {
+      top: 34%;
+      right: -260px;
+
+      background: #596dff;
+
+      animation-delay: -5s;
+    }
+
+    .orb.three {
+      left: -260px;
+      bottom: -270px;
+
+      background: #a65cff;
+
+      animation-delay: -10s;
+    }
+
+    @keyframes floatingOrb {
+
+      from {
+        transform:
+          translate3d(0,0,0)
+          scale(1);
+      }
+
+      to {
+        transform:
+          translate3d(35px,-30px,0)
+          scale(1.09);
+      }
+
+    }
+
+
+    /* ==================================================
+       FLOATING TOP BAR
+    ================================================== */
+
+    .nav-shell {
+      position: fixed;
+
+      top: 18px;
+      left: 50%;
+
+      z-index: 100;
+
+      width:
+        min(
+          calc(100% - 32px),
+          1160px
+        );
+
+      transform:
+        translateX(-50%);
+    }
+
+    .nav {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      gap: 16px;
+
+      min-height: 58px;
+
+      padding:
+        10px
+        12px
+        10px
+        16px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 999px;
+
+      background:
+        rgba(14,14,17,0.74);
+
+      backdrop-filter:
+        blur(25px)
+        saturate(145%);
+
+      -webkit-backdrop-filter:
+        blur(25px)
+        saturate(145%);
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.34),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,0.04);
+    }
+
+    .brand {
+      justify-self: start;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      letter-spacing: -0.025em;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+
+      object-fit: cover;
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.42),
+
+        0 0 0 1px
+        rgba(255,255,255,0.08);
+    }
+
+    .nav-links {
+      justify-self: center;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 4px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        8px
+        11px;
+
+      color: var(--muted);
+
+      text-decoration: none;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+      white-space: nowrap;
+
+      transition:
+        color .22s ease,
+        background .22s ease,
+        transform .22s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+
+      background:
+        rgba(255,255,255,0.055);
+
+      transform:
+        translateY(-1px);
+    }
+
+    .nav-links .server-website {
+      color:
+        rgba(255,255,255,0.88);
+
+      background:
+        rgba(255,255,255,0.035);
+    }
+
+    .nav-cta {
+      justify-self: end;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        9px
+        15px;
+
+      color: #070709;
+
+      background: #ffffff;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      white-space: nowrap;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .nav-cta:hover {
+      transform:
+        scale(1.04);
+
+      box-shadow:
+        0 10px 35px
+        rgba(255,255,255,0.13);
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .hero {
+      width:
+        min(
+          calc(100% - 40px),
+          var(--max-width)
+        );
+
+      margin:
+        0
+        auto;
+
+      padding:
+        170px
+        0
+        105px;
+    }
+
+    .hero-main {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 32px;
+
+      margin:
+        0
+        auto;
+
+      width: fit-content;
+
+      max-width: 100%;
+    }
+
+    .hero-icon {
+      width: 118px;
+      height: 118px;
+
+      flex:
+        0
+        0
+        118px;
+
+      object-fit: cover;
+
+      border-radius: 32px;
+
+      box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.43),
+
+        0 0 0 1px
+        rgba(255,255,255,0.10);
+
+      animation:
+        iconFloat
+        5s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes iconFloat {
+
+      0%,
+      100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(-7px);
+      }
+
+    }
+
+    .hero-copy {
+      text-align: left;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size:
+        clamp(
+          54px,
+          7vw,
+          86px
+        );
+
+      line-height: .95;
+
+      letter-spacing: -.07em;
+
+      font-weight: 800;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 10%,
+          #dddddf 48%,
+          #8b8b92 100%
+        );
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 730px;
+
+      margin:
+        38px
+        auto
+        0;
+
+      color: var(--muted);
+
+      text-align: center;
+
+      font-size: 17px;
+
+      line-height: 1.78;
+    }
+
+    .metadata {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-top: 22px;
+
+      color: var(--subtle);
+
+      font-size: 12px;
+    }
+
+    .metadata-dot {
+      width: 4px;
+
+      height: 4px;
+
+      border-radius: 50%;
+
+      background:
+        #56565c;
+    }
+
+
+    /* ==================================================
+       MAIN LAYOUT
+    ================================================== */
+
+    .layout {
+      width:
+        min(
+          calc(100% - 40px),
+          var(--max-width)
+        );
+
+      margin:
+        0
+        auto
+        110px;
+
+      display: grid;
+
+      grid-template-columns:
+        220px
+        minmax(0,1fr);
+
+      gap: 65px;
+
+      align-items: start;
+    }
+
+
+    /* ==================================================
+       SIDEBAR
+    ================================================== */
+
+    .sidebar {
+      position: sticky;
+
+      top: 105px;
+
+      align-self: start;
+    }
+
+    .sidebar-title {
+      margin-bottom: 13px;
+
+      color: var(--subtle);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 2px;
+    }
+
+    .sidebar a {
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      min-height: 34px;
+
+      margin-left: -9px;
+
+      padding:
+        7px
+        10px;
+
+      color: var(--muted);
+
+      text-decoration: none;
+
+      border-radius: 10px;
+
+      font-size: 12px;
+
+      transition:
+        color .25s ease,
+        background .25s ease,
+        transform .25s ease;
+    }
+
+    .sidebar a::before {
+      content: "";
+
+      position: absolute;
+
+      left: 4px;
+
+      top: 50%;
+
+      width: 3px;
+
+      height: 0;
+
+      border-radius: 999px;
+
+      background: #ffffff;
+
+      opacity: 0;
+
+      transform:
+        translateY(-50%)
+        scaleY(.5);
+
+      transition:
+        height .25s ease,
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .sidebar a:hover {
+      color: var(--text);
+
+      background:
+        rgba(255,255,255,.045);
+
+      transform:
+        translateX(2px);
+    }
+
+    .sidebar a.active {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.085),
+          rgba(255,255,255,.035)
+        );
+
+      box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,.025);
+    }
+
+    .sidebar a.active::before {
+      height: 18px;
+
+      opacity: 1;
+
+      transform:
+        translateY(-50%)
+        scaleY(1);
+    }
+
+
+    /* ==================================================
+       CONTENT
+    ================================================== */
+
+    .content {
+      min-width: 0;
+    }
+
+    .section {
+      position: relative;
+
+      padding:
+        42px
+        0;
+
+      border-top:
+        1px solid
+        var(--border);
+
+      scroll-margin-top: 115px;
+    }
+
+    .section:first-child {
+      padding-top: 0;
+
+      border-top: 0;
+    }
+
+    .number {
+      margin-bottom: 10px;
+
+      color: var(--subtle);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: .09em;
+    }
+
+    .section h2 {
+      margin:
+        0
+        0
+        16px;
+
+      color: var(--text);
+
+      font-size: 31px;
+
+      line-height: 1.16;
+
+      letter-spacing: -.04em;
+    }
+
+    .section h3 {
+      margin:
+        30px
+        0
+        10px;
+
+      color: #e9e9ec;
+
+      font-size: 16px;
+
+      line-height: 1.3;
+
+      letter-spacing: -.015em;
+    }
+
+    .section p {
+      margin:
+        0
+        0
+        17px;
+
+      color: var(--text-soft);
+
+      font-size: 14px;
+
+      line-height: 1.85;
+    }
+
+    .section strong {
+      color: var(--text);
+
+      font-weight: 600;
+    }
+
+    .section ul {
+      margin:
+        18px
+        0
+        22px;
+
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .section li {
+      position: relative;
+
+      margin: 10px 0;
+
+      padding-left: 25px;
+
+      color: var(--text-soft);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    .section li::before {
+      content: "";
+
+      position: absolute;
+
+      left: 4px;
+
+      top: .78em;
+
+      width: 5px;
+
+      height: 5px;
+
+      border-radius: 50%;
+
+      background:
+        #6f6f76;
+    }
+
+
+    /* ==================================================
+       NOTICES
+    ================================================== */
+
+    .notice {
+      margin:
+        24px
+        0;
+
+      padding:
+        22px
+        24px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.065),
+          rgba(255,255,255,.018)
+        );
+
+      box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,.035),
+
+        0 15px 45px
+        rgba(0,0,0,.10);
+    }
+
+    .notice-title {
+      margin-bottom: 5px;
+
+      color: var(--text);
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+    .notice p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.75;
+    }
+
+    .notice.warning {
+      border-color:
+        rgba(255,185,70,.15);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,185,70,.055),
+          rgba(255,255,255,.015)
+        );
+    }
+
+    .notice.danger {
+      border-color:
+        rgba(255,95,87,.16);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,95,87,.065),
+          rgba(255,255,255,.014)
+        );
+    }
+
+
+    /* ==================================================
+       FEATURE GRID
+    ================================================== */
+
+    .feature-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .feature-card {
+      padding: 20px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,.025);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .feature-card:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        var(--border-strong);
+
+      background:
+        rgba(255,255,255,.045);
+    }
+
+    .feature-card h4 {
+      margin:
+        0
+        0
+        6px;
+
+      color: #ededf0;
+
+      font-size: 14px;
+
+      letter-spacing: -.015em;
+    }
+
+    .feature-card p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+
+    /* ==================================================
+       DATA TABLE
+    ================================================== */
+
+    .data-wrapper {
+      margin-top: 25px;
+
+      overflow-x: auto;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 21px;
+
+      background:
+        rgba(255,255,255,.02);
+    }
+
+    table {
+      width: 100%;
+
+      min-width: 650px;
+
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding:
+        14px
+        16px;
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+      text-align: left;
+
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--subtle);
+
+      background:
+        rgba(255,255,255,.025);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+    }
+
+    td {
+      color: var(--text-soft);
+
+      font-size: 12px;
+
+      line-height: 1.65;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td:first-child {
+      color: var(--text);
+
+      font-weight: 600;
+    }
+
+
+    /* ==================================================
+       DEVELOPER CARDS
+    ================================================== */
+
+    .developers {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap: 14px;
+
+      margin-top: 28px;
+    }
+
+    .developer {
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 18px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.018)
+        );
+
+      text-decoration: none;
+
+      overflow: hidden;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .developer::after {
+      content: "";
+
+      position: absolute;
+
+      right: -50px;
+
+      top: -60px;
+
+      width: 140px;
+
+      height: 140px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.035);
+
+      filter: blur(30px);
+    }
+
+    .developer:hover {
+      transform:
+        translateY(-3px);
+
+      border-color:
+        var(--border-strong);
+
+      background:
+        var(--card-hover);
+    }
+
+    .developer-avatar {
+      position: relative;
+
+      z-index: 1;
+
+      width: 58px;
+
+      height: 58px;
+
+      flex:
+        0
+        0
+        58px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.35),
+
+        0 0 0 1px
+        rgba(255,255,255,.10);
+    }
+
+    .developer-info {
+      position: relative;
+
+      z-index: 1;
+
+      min-width: 0;
+    }
+
+    .developer-name {
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      margin-bottom: 3px;
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      font-weight: 700;
+    }
+
+    .flag {
+      font-size: 15px;
+
+      line-height: 1;
+    }
+
+    .developer-handle {
+      color: var(--muted);
+
+      font-size: 11px;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+    }
+
+    .developer-role {
+      margin-top: 5px;
+
+      color: var(--subtle);
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .06em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* ==================================================
+       D-DAY IN HELL SERVER CARD
+    ================================================== */
+
+    .server-card {
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      min-height: 275px;
+
+      margin-top: 32px;
+
+      padding:
+        42px
+        40px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.16);
+
+      border-radius: 28px;
+
+      overflow: hidden;
+
+      isolation: isolate;
+
+      background:
+        rgba(10,10,12,.70);
+
+      box-shadow:
+        0 35px 90px
+        rgba(0,0,0,.30),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.06);
+    }
+
+
+    /*
+      Full Tehran skyline background.
+    */
+
+    .server-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -22px;
+
+      z-index: -2;
+
+      background:
+        url(
+          "https://live.staticflickr.com/6019/6328166563_b3589df016_b.jpg"
+        )
+        center
+        center
+        /
+        cover
+        no-repeat;
+
+      filter:
+        blur(5px)
+        brightness(.34)
+        saturate(.72);
+
+      transform:
+        scale(1.06);
+    }
+
+
+    /*
+      Dark overlay for readability.
+    */
+
+    .server-card::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -1;
+
+      background:
+        linear-gradient(
+          100deg,
+          rgba(4,4,6,.93) 0%,
+          rgba(4,4,6,.77) 43%,
+          rgba(4,4,6,.58) 78%,
+          rgba(4,4,6,.52) 100%
+        );
+    }
+
+
+    .server-info {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 760px;
+    }
+
+
+    .server-label {
+      margin-bottom: 8px;
+
+      color:
+        rgba(255,255,255,.57);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+
+    .server-name {
+      color: #ffffff;
+
+      font-size: 30px;
+
+      line-height: 1.12;
+
+      font-weight: 700;
+
+      letter-spacing: -.04em;
+
+      text-shadow:
+        0 3px 24px
+        rgba(0,0,0,.40);
+    }
+
+
+    .server-description {
+      max-width: 700px;
+
+      margin-top: 14px;
+
+      color:
+        rgba(255,255,255,.77);
+
+      font-size: 13px;
+
+      line-height: 1.85;
+
+      text-shadow:
+        0 2px 14px
+        rgba(0,0,0,.40);
+    }
+
+
+    .server-description strong {
+      color: #ffffff;
+    }
+
+
+    .server-button {
+      position: relative;
+
+      z-index: 2;
+
+      flex:
+        0
+        0
+        auto;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-width: 155px;
+
+      padding:
+        13px
+        20px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.22);
+
+      border-radius: 999px;
+
+      color: #08080a;
+
+      background:
+        rgba(255,255,255,.97);
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 14px 38px
+        rgba(0,0,0,.29);
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+
+    .server-button:hover {
+      transform:
+        translateY(-3px)
+        scale(1.015);
+
+      background:
+        #ffffff;
+
+      box-shadow:
+        0 19px 45px
+        rgba(0,0,0,.40);
+    }
+
+
+    /* ==================================================
+       AGREEMENT
+    ================================================== */
+
+    .agreement {
+      margin-top: 50px;
+
+      padding:
+        32px;
+
+      border:
+        1px solid
+        var(--border-strong);
+
+      border-radius:
+        var(--radius);
+
+      background:
+        radial-gradient(
+          circle at 95% 0,
+          rgba(255,255,255,.075),
+          transparent 42%
+        ),
+        rgba(255,255,255,.032);
+
+      box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.22),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.045);
+    }
+
+    .agreement h2 {
+      margin:
+        0
+        0
+        8px;
+
+      color: var(--text);
+
+      font-size: 24px;
+
+      letter-spacing: -.035em;
+    }
+
+    .agreement p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.75;
+    }
+
+    .agreement-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      margin-top: 20px;
+
+      padding:
+        12px
+        19px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      color: #070709;
+
+      background: #ffffff;
+
+      font-family: inherit;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background .22s ease;
+    }
+
+    .agreement-button:hover {
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 12px 35px
+        rgba(255,255,255,.13);
+    }
+
+    .agreement-button.accepted {
+      color: #ffffff;
+
+      background:
+        #1f9d45;
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+      width:
+        min(
+          calc(100% - 40px),
+          var(--max-width)
+        );
+
+      margin: 0 auto;
+
+      padding:
+        40px
+        0
+        55px;
+
+      border-top:
+        1px solid
+        var(--border);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      color: var(--subtle);
+
+      font-size: 11px;
+    }
+
+    footer a {
+      color: var(--muted);
+
+      text-decoration: none;
+
+      transition:
+        color .2s ease;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+    ================================================== */
+
+    @media (max-width: 1050px) {
+
+      .nav {
+        grid-template-columns:
+          auto
+          1fr
+          auto;
+      }
+
+      .nav-links {
+        justify-self: center;
+
+        gap: 1px;
+      }
+
+      .nav-links a {
+        padding:
+          8px
+          8px;
+
+        font-size: 11px;
+      }
+
+    }
+
+
+    @media (max-width: 850px) {
+
+      .nav {
+        display: flex;
+
+        justify-content:
+          space-between;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+
+      .hero-main {
+        width: 100%;
+
+        gap: 20px;
+
+        justify-content: center;
+      }
+
+      .hero-icon {
+        width: 82px;
+
+        height: 82px;
+
+        flex:
+          0
+          0
+          82px;
+
+        border-radius: 23px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            42px,
+            10vw,
+            62px
+          );
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+      }
+
+      .sidebar {
+        position: relative;
+
+        top: auto;
+
+        width: 100%;
+
+        overflow: hidden;
+      }
+
+      .sidebar-title {
+        display: none;
+      }
+
+      .sidebar-nav {
+        display: flex;
+
+        flex-direction: row;
+
+        gap: 5px;
+
+        overflow-x: auto;
+
+        padding:
+          2px
+          2px
+          7px;
+
+        scrollbar-width: none;
+      }
+
+      .sidebar-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .sidebar a {
+        flex:
+          0
+          0
+          auto;
+
+        min-height: auto;
+
+        margin: 0;
+
+        padding:
+          8px
+          11px;
+
+        background:
+          rgba(255,255,255,.03);
+
+        white-space: nowrap;
+      }
+
+      .sidebar a::before {
+        display: none;
+      }
+
+      .sidebar a.active {
+        background:
+          rgba(255,255,255,.095);
+
+        box-shadow:
+          inset
+          0 1px 0
+          rgba(255,255,255,.045);
+      }
+
+      .feature-grid,
+      .developers {
+        grid-template-columns: 1fr;
+      }
+
+      .server-card {
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+        min-height:
+          330px;
+
+        justify-content:
+          flex-end;
+
+        padding:
+          31px
+          27px;
+      }
+
+      .server-info {
+        max-width:
+          100%;
+      }
+
+      .server-description {
+        max-width:
+          100%;
+      }
+
+      .server-button {
+        width: 100%;
+
+        text-align: center;
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .hero {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max-width)
+          );
+      }
+
+      .layout,
+      footer {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max-width)
+          );
+      }
+
+      .hero-main {
+        gap: 15px;
+      }
+
+      .hero-icon {
+        width: 66px;
+
+        height: 66px;
+
+        flex:
+          0
+          0
+          66px;
+
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .section h2 {
+        font-size: 27px;
+      }
+
+      .agreement {
+        padding: 23px;
+      }
+
+      .developer {
+        padding: 16px;
+      }
+
+      .server-card {
+        padding:
+          26px
+          23px;
+      }
+
+      .server-name {
+        font-size: 23px;
+      }
+
+      .server-description {
+        font-size: 12px;
+      }
+
+    }
+
+
+    /* ==================================================
+       REDUCED MOTION
+    ================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before {
+        animation: none !important;
+
+        transition: none !important;
+
+        scroll-behavior: auto !important;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       AMBIENT BACKGROUND
+  ================================================== -->
+
+  <div class="ambient">
+
+    <div class="grid"></div>
+
+    <div class="orb one"></div>
+
+    <div class="orb two"></div>
+
+    <div class="orb three"></div>
+
+  </div>
+
+
+  <!-- ==================================================
+       FLOATING NAVIGATION
+  ================================================== -->
+
+  <div class="nav-shell">
+
+    <nav class="nav">
+
+
+      <a
+        href="#"
+        class="brand"
+      >
+
+        <img
+          src="https://images-ext-1.discordapp.net/external/6mXTSD58wzY7Bi8v03PvoSZwkJsIOtusKx8bgFPGces/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1313554605283475526/ed9620463e4402da90a4631f895db4c0.png?format=webp&quality=lossless"
+          alt="PahlaviBot"
+        >
+
+        <span>
+          PahlaviBot
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="#acceptance">
+          Terms
+        </a>
+
+        <a href="#service">
+          Service
+        </a>
+
+        <a href="#data">
+          Data
+        </a>
+
+        <a href="#privacy">
+          Privacy
+        </a>
+
+        <a href="#liability">
+          Liability
+        </a>
+
+        <a
+          href="https://ddayinhell.dpdns.org"
+          class="server-website"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Server Website
+        </a>
+
+      </div>
+
+
+      <a
+        href="#agreement"
+        class="nav-cta"
+      >
+        I understand
+      </a>
+
+    </nav>
+
+  </div>
+
+
+  <!-- ==================================================
+       HERO
+  ================================================== -->
+
+  <header class="hero">
+
+    <div class="hero-main">
+
+      <img
+        class="hero-icon"
+        src="https://images-ext-1.discordapp.net/external/6mXTSD58wzY7Bi8v03PvoSZwkJsIOtusKx8bgFPGces/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1313554605283475526/ed9620463e4402da90a4631f895db4c0.png?format=webp&quality=lossless"
+        alt="PahlaviBot logo"
+      >
+
+      <div class="hero-copy">
+
+        <h1>
+          Terms of<br>
+          Service.
+        </h1>
+
+      </div>
+
+    </div>
+
+
+    <p class="hero-description">
+
+      The rules governing your use of PahlaviBot, including its
+      economy, utility systems, stored data, server features,
+      automated message processing, and other functionality
+      available through Discord.
+
+    </p>
+
+
+    <div class="metadata">
+
+      <span>
+        Last updated September 8, 2026
+      </span>
+
+      <span class="metadata-dot"></span>
+
+      <span>
+        PahlaviBot
+      </span>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================================================
+       MAIN
+  ================================================== -->
+
+  <main class="layout">
+
+
+    <!-- ==================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+      <div class="sidebar-title">
+        On this page
+      </div>
+
+
+      <nav
+        class="sidebar-nav"
+        id="sidebarNav"
+      >
+
+        <a
+          href="#acceptance"
+          data-section="acceptance"
+        >
+          01 · Acceptance
+        </a>
+
+        <a
+          href="#service"
+          data-section="service"
+        >
+          02 · Service
+        </a>
+
+        <a
+          href="#features"
+          data-section="features"
+        >
+          03 · Features
+        </a>
+
+        <a
+          href="#usage"
+          data-section="usage"
+        >
+          04 · Acceptable Use
+        </a>
+
+        <a
+          href="#data"
+          data-section="data"
+        >
+          05 · Data
+        </a>
+
+        <a
+          href="#privacy"
+          data-section="privacy"
+        >
+          06 · Privacy
+        </a>
+
+        <a
+          href="#economy"
+          data-section="economy"
+        >
+          07 · Economy
+        </a>
+
+        <a
+          href="#moderation"
+          data-section="moderation"
+        >
+          08 · Moderation
+        </a>
+
+        <a
+          href="#abuse"
+          data-section="abuse"
+        >
+          09 · Abuse
+        </a>
+
+        <a
+          href="#availability"
+          data-section="availability"
+        >
+          10 · Availability
+        </a>
+
+        <a
+          href="#termination"
+          data-section="termination"
+        >
+          11 · Termination
+        </a>
+
+        <a
+          href="#liability"
+          data-section="liability"
+        >
+          12 · Liability
+        </a>
+
+        <a
+          href="#changes"
+          data-section="changes"
+        >
+          13 · Changes
+        </a>
+
+        <a
+          href="#developers"
+          data-section="developers"
+        >
+          14 · Developers
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================================================
+         TERMS CONTENT
+    ================================================== -->
+
+    <article class="content">
+
+
+      <!-- 01 -->
+
+      <section
+        class="section"
+        id="acceptance"
+      >
+
+        <div class="number">
+          01
+        </div>
+
+        <h2>
+          Acceptance of these terms
+        </h2>
+
+        <p>
+          By adding PahlaviBot to a Discord server, interacting
+          with the bot, invoking one of its commands, configuring
+          one of its features, or otherwise using any portion
+          of the service, you acknowledge that you have read,
+          understood, and agreed to these Terms of Service.
+        </p>
+
+        <p>
+          These terms apply to individual users as well as
+          Discord server owners, administrators, moderators,
+          and other persons responsible for configuring or
+          operating PahlaviBot in a server.
+        </p>
+
+        <p>
+          If you do not agree with these terms, you should stop
+          using PahlaviBot and remove it from any server under
+          your control.
+        </p>
+
+        <div class="notice">
+
+          <div class="notice-title">
+            Discord remains separate
+          </div>
+
+          <p>
+            Your use of Discord is also governed by Discord's own
+            Terms of Service, Community Guidelines, Developer Terms,
+            Developer Policy, and other applicable rules. Nothing in
+            these terms replaces or overrides Discord's rules.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 02 -->
+
+      <section
+        class="section"
+        id="service"
+      >
+
+        <div class="number">
+          02
+        </div>
+
+        <h2>
+          The PahlaviBot service
+        </h2>
+
+        <p>
+          PahlaviBot is a Discord application operated and
+          maintained by <strong>Clipper004</strong>. It provides
+          a collection of utility, entertainment, information,
+          roleplay, economy, server-management, and automation
+          features for Discord communities.
+        </p>
+
+        <p>
+          The exact functionality available to a particular user
+          may depend on Discord permissions, server configuration,
+          enabled modules, command restrictions, feature availability,
+          and the state of external services used by the bot.
+        </p>
+
+        <p>
+          PahlaviBot is continuously developed. Features may be
+          changed, redesigned, disabled, temporarily unavailable,
+          or permanently removed as development progresses.
+        </p>
+
+      </section>
+
+
+      <!-- 03 -->
+
+      <section
+        class="section"
+        id="features"
+      >
+
+        <div class="number">
+          03
+        </div>
+
+        <h2>
+          Features and functionality
+        </h2>
+
+        <p>
+          PahlaviBot currently contains or supports a range of
+          systems. Because the project is actively maintained,
+          this list is descriptive rather than an exhaustive
+          guarantee that every feature will remain available
+          indefinitely.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+
+            <h4>
+              Economy
+            </h4>
+
+            <p>
+              Wallets, bank accounts, treasury management,
+              transactions, interest, inflation, exchange rates,
+              government payments, trading, purchases, and
+              monetary administration.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              National development
+            </h4>
+
+            <p>
+              Facilities, factories, construction projects,
+              districts, production calculations, GDP systems,
+              and development mechanics.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Military systems
+            </h4>
+
+            <p>
+              Personnel management, recruitment, deployment,
+              reserves, equipment, deliveries, reports,
+              and war simulations.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Counting
+            </h4>
+
+            <p>
+              Configurable counting channels, invalid-number
+              deletion, duplicate-count prevention, and
+              counting state management.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Reminders
+            </h4>
+
+            <p>
+              Creation, editing, delivery, listing, and
+              cancellation of user-created reminders.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Identity profiles
+            </h4>
+
+            <p>
+              Optional profile information such as pronouns,
+              gender, sexuality, romantic orientation,
+              flags, and biographies.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Information & entertainment
+            </h4>
+
+            <p>
+              Country information, comparisons, dictionaries,
+              fact checking, AI explanations, poems, games,
+              fun facts, and simulations.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <h4>
+              Server utilities
+            </h4>
+
+            <p>
+              Server and channel information, avatars,
+              nicknames, uptime, statistics dashboards,
+              and server configuration tools.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- 04 -->
+
+      <section
+        class="section"
+        id="usage"
+      >
+
+        <div class="number">
+          04
+        </div>
+
+        <h2>
+          Acceptable use
+        </h2>
+
+        <p>
+          You agree to use PahlaviBot responsibly and only for
+          lawful, legitimate purposes. Your use of the service
+          must not interfere with the operation of the bot,
+          its infrastructure, Discord, or other users.
+        </p>
+
+        <h3>
+          Prohibited behavior
+        </h3>
+
+        <ul>
+
+          <li>
+            Attempting to exploit, attack, overload, disable,
+            or disrupt PahlaviBot or infrastructure on which
+            it operates.
+          </li>
+
+          <li>
+            Attempting to obtain unauthorized access to databases,
+            credentials, source code, administrative systems,
+            backups, internal endpoints, or other restricted
+            resources.
+          </li>
+
+          <li>
+            Circumventing rate limits, command restrictions,
+            permission systems, or other technical safeguards.
+          </li>
+
+          <li>
+            Deliberately abusing bugs or unintended behavior
+            to obtain an advantage, including generating
+            fraudulent economy funds.
+          </li>
+
+          <li>
+            Using the bot to facilitate harassment, threats,
+            malicious activity, fraud, or other unlawful behavior.
+          </li>
+
+          <li>
+            Attempting to compromise or interfere with other
+            Discord users, servers, bots, or services through
+            PahlaviBot.
+          </li>
+
+          <li>
+            Using PahlaviBot in a way that violates Discord's
+            applicable rules or developer requirements.
+          </li>
+
+        </ul>
+
+        <div class="notice danger">
+
+          <div class="notice-title">
+            Exploitation
+          </div>
+
+          <p>
+            Discovering a bug is not itself prohibited. Intentionally
+            exploiting that bug after discovering it, particularly
+            to manipulate the economy, access restricted information,
+            or interfere with service operation, may result in
+            restrictions or termination.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 05 -->
+
+      <section
+        class="section"
+        id="data"
+      >
+
+        <div class="number">
+          05
+        </div>
+
+        <h2>
+          Information PahlaviBot stores
+        </h2>
+
+        <p>
+          PahlaviBot stores information where doing so is necessary
+          to provide particular features, preserve configuration,
+          maintain server state, calculate statistics, process
+          transactions, or otherwise operate the service.
+        </p>
+
+        <div class="data-wrapper">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Information
+                </th>
+
+                <th>
+                  Stored
+                </th>
+
+                <th>
+                  Purpose
+                </th>
+
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+
+                <td>
+                  Discord user ID
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Identifies users across supported systems
+                  including profiles, economy, reminders,
+                  transactions, and counters.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Display name
+                </td>
+
+                <td>
+                  Yes, partially
+                </td>
+
+                <td>
+                  The bot may store the current display name
+                  for identification in supported systems.
+                  A complete historical username database
+                  is not maintained.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Avatar
+                </td>
+
+                <td>
+                  No persistent storage
+                </td>
+
+                <td>
+                  Avatar information may be retrieved or
+                  displayed when needed by commands without
+                  maintaining a permanent avatar archive.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Guild/server ID
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Required for server-specific configuration,
+                  economy, settings, reminders, statistics,
+                  and related functionality.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Channel IDs
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Used for counting channels, configuration,
+                  command logs, reminders, treasury-related
+                  settings, and other features.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Role IDs
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Used by systems such as payroll, economy
+                  permissions, server configuration, and
+                  related functionality.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Message content
+                </td>
+
+                <td>
+                  Temporarily processed
+                </td>
+
+                <td>
+                  Used for counting, profanity detection,
+                  keyword reactions, and certain phrase-based
+                  functionality. Ordinary message bodies are
+                  not permanently stored by PahlaviBot.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Command activity
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Recent command names, options/arguments,
+                  user display information, server information,
+                  and timestamps may be logged.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Economy data
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Wallets, bank balances, treasury data,
+                  monetary supply, inflation, exchange rates,
+                  and associated economic state.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Transaction records
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Used to maintain economic integrity and
+                  record payments, purchases, trades, deposits,
+                  withdrawals, payroll, and administrative
+                  monetary operations.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Reminders
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Includes the reminder text, user, server,
+                  due time, and delivery state as necessary
+                  to provide reminders.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Swear counts
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Cumulative profanity counts associated with
+                  users may be retained for the relevant
+                  server functionality.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Identity profiles
+                </td>
+
+                <td>
+                  Yes, when supplied
+                </td>
+
+                <td>
+                  Optional profile information entered by
+                  a user, including pronouns, gender, sexuality,
+                  romantic orientation, flag, and biography.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  DM campaign data
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  Campaign content, author, recipients,
+                  timestamps, delivery state, and results
+                  may be retained to manage campaigns.
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td>
+                  Statistics
+                </td>
+
+                <td>
+                  Yes
+                </td>
+
+                <td>
+                  May include server counts, economy metrics,
+                  runtime data, exchange-rate history,
+                  inflation history, and dashboard data.
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+        <h3>
+          Message content retention
+        </h3>
+
+        <p>
+          PahlaviBot does not permanently store ordinary message
+          bodies. Message content may be read temporarily while
+          Discord events are being processed.
+        </p>
+
+        <p>
+          This processing may occur for counting, profanity detection,
+          keyword-based reactions, ghost-ping-related behavior,
+          or similar message-triggered functionality.
+        </p>
+
+        <p>
+          Although ordinary message content is not retained as
+          a permanent message archive, derived information can
+          be stored. For example, a profanity detector may retain
+          a user's cumulative swear count, while the counting
+          system may retain counting state or timestamps.
+        </p>
+
+        <div class="notice warning">
+
+          <div class="notice-title">
+            Command arguments are different
+          </div>
+
+          <p>
+            Slash-command names and their arguments/options may
+            be written to command activity logs. Do not place
+            passwords, authentication tokens, payment details,
+            or similarly sensitive information into bot
+            command arguments.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 06 -->
+
+      <section
+        class="section"
+        id="privacy"
+      >
+
+        <div class="number">
+          06
+        </div>
+
+        <h2>
+          Privacy and data use
+        </h2>
+
+        <p>
+          PahlaviBot uses stored information primarily to provide
+          the features requested or configured by users and
+          server administrators, maintain persistent server state,
+          preserve economic records, generate statistics,
+          and operate the service.
+        </p>
+
+        <p>
+          Data is not intentionally collected simply for the
+          purpose of building a permanent archive of Discord
+          conversations. Ordinary message bodies are processed
+          only when needed by message-triggered features and are
+          not treated as a permanent chat history.
+        </p>
+
+        <h3>
+          Server administrators
+        </h3>
+
+        <p>
+          Server administrators are responsible for determining
+          which bot features are appropriate for their community
+          and for configuring permissions correctly. Administrators
+          should consider their own community's expectations and
+          applicable privacy requirements before enabling features
+          that collect persistent information.
+        </p>
+
+        <h3>
+          Third-party infrastructure
+        </h3>
+
+        <p>
+          PahlaviBot may use external infrastructure or services
+          for hosting, backups, synchronization, networking,
+          analytics, or other operational purposes. The exact
+          providers used by the project may change during
+          development.
+        </p>
+
+        <p>
+          PahlaviBot may also synchronize selected persistent
+          data with backup infrastructure where necessary to
+          protect against data loss and maintain service continuity.
+        </p>
+
+      </section>
+
+
+      <!-- 07 -->
+
+      <section
+        class="section"
+        id="economy"
+      >
+
+        <div class="number">
+          07
+        </div>
+
+        <h2>
+          Economy and virtual currency
+        </h2>
+
+        <p>
+          PahlaviBot's economy is a fictional, server-specific
+          system intended for entertainment, gameplay, simulation,
+          and roleplay. Currency represented inside PahlaviBot
+          has no inherent cash value and is not intended to
+          represent real-world money.
+        </p>
+
+        <h3>
+          Virtual currency
+        </h3>
+
+        <p>
+          PahlaviBot does not currently provide a system for
+          purchasing its fictional currency with real money.
+          The currency cannot be treated as a bank deposit,
+          investment, security, payment method, or claim against
+          the bot's operator.
+        </p>
+
+        <h3>
+          Economic functionality
+        </h3>
+
+        <ul>
+
+          <li>
+            Users may hold funds in wallets and private
+            bank accounts.
+          </li>
+
+          <li>
+            Users may deposit and withdraw funds.
+          </li>
+
+          <li>
+            Users may receive government payments and payroll.
+          </li>
+
+          <li>
+            Users may purchase configured personal items.
+          </li>
+
+          <li>
+            Users may participate in supported resource trading.
+          </li>
+
+          <li>
+            Servers may operate treasury and national
+            economic systems.
+          </li>
+
+        </ul>
+
+        <h3>
+          Administrative controls
+        </h3>
+
+        <p>
+          Authorized administrators may have tools capable of
+          creating or removing money, issuing government payments,
+          changing economic parameters, modifying bank interest,
+          or otherwise maintaining the server economy.
+        </p>
+
+        <p>
+          Such controls exist because PahlaviBot's economic
+          systems are designed partly around simulated governments
+          and server-specific economies. They should not be
+          interpreted as authorization to manipulate another
+          server or user's data without appropriate permission.
+        </p>
+
+        <h3>
+          Economy exploits
+        </h3>
+
+        <p>
+          If a bug or unintended behavior causes fraudulent money
+          creation, the affected economy may be corrected. This
+          may include removing duplicated currency, reversing
+          transactions, disabling an affected command, restoring
+          data from a verified backup, or otherwise repairing
+          the affected economic state.
+        </p>
+
+        <p>
+          Intentionally exploiting an economic vulnerability may
+          result in access restrictions or other action under
+          these terms.
+        </p>
+
+      </section>
+
+
+      <!-- 08 -->
+
+      <section
+        class="section"
+        id="moderation"
+      >
+
+        <div class="number">
+          08
+        </div>
+
+        <h2>
+          Message handling and moderation
+        </h2>
+
+        <p>
+          PahlaviBot provides limited automated message functionality.
+          It is not intended to replace a complete moderation system
+          or the judgment of human server administrators.
+        </p>
+
+        <h3>
+          Automated message actions
+        </h3>
+
+        <ul>
+
+          <li>
+            Invalid counting messages may be deleted.
+          </li>
+
+          <li>
+            Incorrect counting messages may be deleted.
+          </li>
+
+          <li>
+            Consecutive counting attempts by the same user
+            may be deleted when prohibited by the counting system.
+          </li>
+
+          <li>
+            Configured swear words may be detected and associated
+            with a user's cumulative swear count.
+          </li>
+
+          <li>
+            Certain keywords or phrases may trigger configured
+            reactions or temporary responses.
+          </li>
+
+        </ul>
+
+        <h3>
+          What PahlaviBot does not currently do
+        </h3>
+
+        <ul>
+
+          <li>
+            Automatically ban users.
+          </li>
+
+          <li>
+            Automatically kick users.
+          </li>
+
+          <li>
+            Automatically timeout users.
+          </li>
+
+          <li>
+            Issue formal moderation warnings.
+          </li>
+
+          <li>
+            Maintain a general-purpose punishment database.
+          </li>
+
+          <li>
+            Override Discord server moderation decisions.
+          </li>
+
+        </ul>
+
+        <p>
+          Discord permissions and the configuration chosen by
+          the server's administrators remain authoritative.
+        </p>
+
+      </section>
+
+
+      <!-- 09 -->
+
+      <section
+        class="section"
+        id="abuse"
+      >
+
+        <div class="number">
+          09
+        </div>
+
+        <h2>
+          Abuse, restrictions, and security
+        </h2>
+
+        <p>
+          PahlaviBot is maintained as a community service.
+          Protecting the reliability and security of the service
+          may require restricting particular users, commands,
+          servers, or integrations.
+        </p>
+
+        <p>
+          Where technically available, administrators or developers
+          may restrict functionality in response to abuse,
+          exploitation, excessive resource use, unauthorized
+          activity, or other behavior that threatens the service.
+        </p>
+
+        <p>
+          Because PahlaviBot does not currently provide a complete
+          automated blacklist or moderation-ban framework, some
+          restrictions may need to be enforced through Discord
+          permissions, configuration changes, infrastructure
+          controls, or manual maintenance.
+        </p>
+
+        <div class="notice danger">
+
+          <div class="notice-title">
+            Security and unauthorized access
+          </div>
+
+          <p>
+            Attempts to obtain unauthorized access to PahlaviBot's
+            systems, source code, backups, databases, hosting
+            environment, credentials, or administrative controls
+            are prohibited.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 10 -->
+
+      <section
+        class="section"
+        id="availability"
+      >
+
+        <div class="number">
+          10
+        </div>
+
+        <h2>
+          Availability and maintenance
+        </h2>
+
+        <p>
+          PahlaviBot is provided on a best-effort basis. There is
+          no guarantee that the bot will remain online continuously
+          or that every feature will always be available.
+        </p>
+
+        <p>
+          Temporary or extended interruptions may occur because
+          of software updates, maintenance, hosting failures,
+          networking problems, database problems, Discord outages,
+          external API failures, security incidents, or other
+          circumstances outside the operator's reasonable control.
+        </p>
+
+        <p>
+          An uptime command or dashboard may report observed
+          availability, but those measurements are informational
+          and do not constitute a service-level agreement or
+          uptime guarantee.
+        </p>
+
+        <h3>
+          Backups
+        </h3>
+
+        <p>
+          PahlaviBot may maintain local, Git-based, or external
+          backups of persistent data. Backups are intended to
+          reduce the impact of accidental deletion, corruption,
+          software failures, or other incidents.
+        </p>
+
+        <p>
+          Backup availability is not guaranteed, and restoration
+          may not always be possible or complete.
+        </p>
+
+      </section>
+
+
+      <!-- 11 -->
+
+      <section
+        class="section"
+        id="termination"
+      >
+
+        <div class="number">
+          11
+        </div>
+
+        <h2>
+          Termination and removal
+        </h2>
+
+        <p>
+          Server administrators may remove PahlaviBot from their
+          server at any time using the normal Discord mechanisms
+          available to them.
+        </p>
+
+        <p>
+          Access to the bot may also be restricted when necessary
+          to respond to abuse, security incidents, exploitation,
+          service disruption, or violations of these terms.
+        </p>
+
+        <p>
+          Restriction or termination may apply to an individual
+          user, a specific server, particular features, or the
+          service as a whole.
+        </p>
+
+        <p>
+          Removing PahlaviBot from a server does not necessarily
+          cause existing stored data to disappear immediately.
+          Persistent records may remain until they are manually
+          deleted, naturally become irrelevant to the service,
+          or are otherwise removed according to the applicable
+          data-handling process.
+        </p>
+
+      </section>
+
+
+      <!-- 12 -->
+
+      <section
+        class="section"
+        id="liability"
+      >
+
+        <div class="number">
+          12
+        </div>
+
+        <h2>
+          Disclaimer and limitation of liability
+        </h2>
+
+        <p>
+          PahlaviBot is provided on an
+          <strong>"as is"</strong> and
+          <strong>"as available"</strong>
+          basis.
+        </p>
+
+        <p>
+          The operator does not guarantee that the bot will be
+          uninterrupted, error-free, secure at all times,
+          compatible with every Discord configuration, or
+          permanently retain every piece of stored data.
+        </p>
+
+        <p>
+          To the maximum extent permitted by applicable law,
+          the operator is not responsible for losses arising
+          from outages, corrupted data, incorrect bot responses,
+          economy changes, deleted messages, missed reminders,
+          failed notifications, Discord outages, external service
+          failures, or inability to access PahlaviBot.
+        </p>
+
+        <p>
+          You are responsible for maintaining separate copies
+          of information that is important to you and for
+          ensuring that PahlaviBot is appropriate for the Discord
+          server in which you use it.
+        </p>
+
+        <div class="notice warning">
+
+          <div class="notice-title">
+            No financial value
+          </div>
+
+          <p>
+            PahlaviBot's economy is fictional. No balance,
+            item, treasury amount, virtual asset, or simulated
+            currency should be relied upon as having real-world
+            monetary value.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- 13 -->
+
+      <section
+        class="section"
+        id="changes"
+      >
+
+        <div class="number">
+          13
+        </div>
+
+        <h2>
+          Changes to these terms
+        </h2>
+
+        <p>
+          These Terms of Service may be updated as PahlaviBot
+          evolves, introduces new systems, changes its data
+          practices, or responds to operational and legal
+          requirements.
+        </p>
+
+        <p>
+          The date displayed at the beginning of this document
+          represents the most recent update to the published
+          version.
+        </p>
+
+        <p>
+          Continued use of PahlaviBot after updated terms are
+          published constitutes acceptance of those updated
+          terms to the extent permitted by applicable law.
+        </p>
+
+      </section>
+
+
+      <!-- 14 -->
+
+      <section
+        class="section"
+        id="developers"
+      >
+
+        <div class="number">
+          14
+        </div>
+
+        <h2>
+          PahlaviBot team
+        </h2>
+
+        <p>
+          PahlaviBot is maintained independently and is not
+          represented as an official Discord product or service.
+        </p>
+
+
+        <!-- Developer cards -->
+
+        <div class="developers">
+
+
+          <!-- CLIPPER -->
+
+          <a
+            class="developer"
+            href="https://discord.com/users/1388373860348461208"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <img
+              class="developer-avatar"
+              src="https://images-ext-1.discordapp.net/external/DXL6gCnWtiWVjeN7hLsNUd8xwdDljG80Y6-p9zr8klc/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1388373860348461208/14152f6b1654b414a07df1d7b8d313a9.png?format=webp&quality=lossless"
+              alt="clipper_004"
+            >
+
+
+            <div class="developer-info">
+
+              <div class="developer-name">
+
+                clipper_004
+
+                <span class="flag">
+                  🇸🇬
+                </span>
+
+              </div>
+
+
+              <div class="developer-handle">
+                Discord profile
+              </div>
+
+
+              <div class="developer-role">
+                Developer · Owner of PahlaviBot
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <!-- DRAGON -->
+
+          <a
+            class="developer"
+            href="https://discord.com/users/930867740502286356"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <img
+              class="developer-avatar"
+              src="https://images-ext-1.discordapp.net/external/AvH6jMQ9mQ-trcR_Mx7Oafsv4qj-LdwKxjwkExUnRiw/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1536680633529802762/3c642be9355d95061b5f23240cc1c6ba.png?format=webp&quality=lossless"
+              alt="maddragon3322"
+            >
+
+
+            <div class="developer-info">
+
+              <div class="developer-name">
+
+                maddragon3322
+
+                <span class="flag">
+                  🇮🇷
+                </span>
+
+              </div>
+
+
+              <div class="developer-handle">
+                Discord profile
+              </div>
+
+
+              <div class="developer-role">
+                Server Owner
+              </div>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             D-DAY IN HELL
+        ================================================== -->
+
+        <div class="server-card">
+
+
+          <div class="server-info">
+
+            <div class="server-label">
+              Join the community
+            </div>
+
+
+            <div class="server-name">
+              D-Day In Hell
+            </div>
+
+
+            <div class="server-description">
+
+              Into warfare games and D-Day-style battles on Roblox?
+              Join <strong>D-Day In Hell</strong> to meet other
+              players, get involved in the community, and take
+              part in the action.
+
+            </div>
+
+          </div>
+
+
+          <a
+            class="server-button"
+            href="https://discord.gg/EjYeATUk8d"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Discord
+          </a>
+
+
+        </div>
+
+
+        <!-- ==================================================
+             AGREEMENT
+        ================================================== -->
+
+        <div
+          class="agreement"
+          id="agreement"
+        >
+
+          <h2>
+            You're all set.
+          </h2>
+
+
+          <p>
+            By continuing to use PahlaviBot, you acknowledge
+            that you have read and understood these Terms of
+            Service and agree to use the service responsibly.
+          </p>
+
+
+          <button
+            class="agreement-button"
+            id="agreementButton"
+            type="button"
+          >
+            I understand
+          </button>
+
+        </div>
+
+
+      </section>
+
+
+    </article>
+
+  </main>
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <div>
+      © 2026 PahlaviBot · Maintained by Clipper004
+    </div>
+
+
+    <div>
+
+      <a
+        href="https://ddayinhell.dpdns.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Server Website
+      </a>
+
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+
+      <a
+        href="https://discord.gg/EjYeATUk8d"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Discord
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==================================================
+       JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+
+    /* ==================================================
+       AGREEMENT BUTTON
+    ================================================== */
+
+    const agreementButton =
+      document.getElementById(
+        "agreementButton"
+      );
+
+
+    const storageKey =
+      "pahlavibot_terms_acknowledged";
+
+
+    function acknowledgeTerms() {
+
+      localStorage.setItem(
+        storageKey,
+        "true"
+      );
+
+
+      agreementButton.classList.add(
+        "accepted"
+      );
+
+
+      agreementButton.textContent =
+        "✓ Terms acknowledged";
+
+    }
+
+
+    agreementButton.addEventListener(
+      "click",
+      acknowledgeTerms
+    );
+
+
+    if (
+      localStorage.getItem(
+        storageKey
+      ) === "true"
+    ) {
+
+      agreementButton.classList.add(
+        "accepted"
+      );
+
+
+      agreementButton.textContent =
+        "✓ Terms acknowledged";
+
+    }
+
+
+    /* ==================================================
+       ACTIVE SIDEBAR TRACKING
+    ================================================== */
+
+    const sections =
+      Array.from(
+        document.querySelectorAll(
+          ".section"
+        )
+      );
+
+
+    const sidebarLinks =
+      Array.from(
+        document.querySelectorAll(
+          ".sidebar a[data-section]"
+        )
+      );
+
+
+    function setActiveSection(
+      sectionId
+    ) {
+
+      sidebarLinks.forEach(
+        (link) => {
+
+          const active =
+            link.dataset.section ===
+            sectionId;
+
+
+          link.classList.toggle(
+            "active",
+            active
+          );
+
+        }
+      );
+
+    }
+
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          const visible =
+            entries
+              .filter(
+                entry =>
+                  entry.isIntersecting
+              )
+              .sort(
+                (a,b) =>
+                  a.boundingClientRect.top -
+                  b.boundingClientRect.top
+              );
+
+
+          if (
+            visible.length > 0
+          ) {
+
+            setActiveSection(
+              visible[0]
+                .target
+                .id
+            );
+
+          }
+
+        },
+        {
+
+          root: null,
+
+          rootMargin:
+            "-18% 0px -62% 0px",
+
+          threshold: 0
+
+        }
+      );
+
+
+    sections.forEach(
+      (section) =>
+        observer.observe(section)
+    );
+
+
+    sidebarLinks.forEach(
+      (link) => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            setActiveSection(
+              link.dataset.section
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    if (
+      window.location.hash
+    ) {
+
+      const initialId =
+        window.location.hash.substring(1);
+
+
+      const initialSection =
+        document.getElementById(
+          initialId
+        );
+
+
+      if (
+        initialSection
+      ) {
+
+        setActiveSection(
+          initialId
+        );
+
+      } else {
+
+        setActiveSection(
+          "acceptance"
+        );
+
+      }
+
+    } else {
+
+      setActiveSection(
+        "acceptance"
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
